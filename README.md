@@ -1,13 +1,33 @@
-# {LDD Name} Local Data Dictionary (LDD)
+# Chandrayaan-1 Mission Local Data Dictionary (LDD)
 
-The {LDD Name} dictionary contains classes that describe a fictitious mission. It can be used as a starting point for creating a new local data dictionary (LDD). After cloning the files, do the following:
+The Chandrayaan-1 mission dictionary contains a class with attributes specific to the 
+        Chandrayaan-1 mission and instruments. This dictionary was created for the migration
+        of Chandrayaan data products from PDS3 to PDS4.
 
+Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
-# Documentation
+Only one LDD source version is kept such that it can be managed by github.
 
-User Guide: TBD
-Other Documentation: TBD
+- [1.D.0.0](src)
 
+## Versions
+
+A Local Data Dictionary (LDD) is built for selected versions of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/).
+The build process insures compatiblity of the LDD with the core information model.
+
+## Builds
+
+This LDD has been released for the following versions of the PDS4 information model:
+
+- [PDS4 IM v1.D.0.0 (CHAN1 LDD v1.0.0.0)](build/release/1.D.0.0_1.0.0.0)
+
+## Notes
+
+Each build is generated using the [lddtool](https://pds.nasa.gov/tools/about/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/datastandards/documents/im/). The build command used is:
+
+```
+lddtool -lpsnJ PDS4_CHAN1_IngestLDD.xml
+```
 
 # Contribute
 
