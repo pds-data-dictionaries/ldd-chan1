@@ -17,14 +17,17 @@
     <steward_id>geo</steward_id>
     <namespace_id>chan1</namespace_id>
     <comment>
-        The Chandrayaan-1 mission dictionary contains a class with attributes specific to the 
-        Chandrayaan-1 mission and instruments. This dictionary was created for the migration
-        of Chandrayaan data products from PDS3 to PDS4.
+      The Chandrayaan-1 mission dictionary contains a class with attributes specific to the 
+      Chandrayaan-1 mission and instruments. This dictionary was created for the migration
+      of Chandrayaan data products from PDS3 to PDS4.
+        
+      v1.1.0.0, T.Hare
+      - Initial updates for M3 
         
     </comment>
     <last_modification_date_time>2020-02-07</last_modification_date_time>
 
-<!-- attributes (alphabetical order)
+<!-- attributes (alphabetical order) Mini-RF
         <chan1:instrument_mode_id>BASELINE_S_STEEP2</chan1:instrument_mode_id>
         <chan1:instrument_mode_desc>SAR</chan1:instrument_mode_desc>
         <chan1:mission_phase_name>Nominal Mission</chan1:<mission_phase_name>
@@ -180,8 +183,127 @@
             <pattern>([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
+
+
+<!-- attributes (alphabetical order) M3 -->
+
+    <DD_Attribute>
+        <name>pitch</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.pitch</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Rotation about the Y-axis.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
     
-<!-- Classes -->    
+    <DD_Attribute>
+        <name>orbit_limb_direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.orbit_limb_direction</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>
+            The orbit_limb attribute provides the direction of the spacecraft orbit with respect to the lunar limb.
+            valids: "Ascending", "Descending"
+        </definition>
+        <DD_Value_Domain>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>Ascending</value>
+            <value_meaning>Direction of the spacecraft orbit is ascending with respect to the lunar limb.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Descending</value>
+            <value_meaning>Direction of the spacecraft orbit is descending with respect to the lunar limb.</value_meaning>
+          </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>orientation_epoch_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.orientation_epoch_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>orientation_epoch_time indicates time for the recorded orentiation.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>roll</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.roll</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Rotation about the X-axis.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>spacecraft_yaw_direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.spacecraft_yaw_direction</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>
+            The spacecraft_yaw_direction attribute provides the spacecraft yaw (look) mode.
+            valids: "Forward", "Reverse"
+        </definition>
+        <DD_Value_Domain>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>Forward</value>
+            <value_meaning>Defines a forward spacecraft yaw (look) mode.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Reverse</value>
+            <value_meaning>Defines a reverse spacecraft yaw (look) mode.</value_meaning>
+          </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>yaw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.yaw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Rotation about the Z-axis.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+<!-- End of Attributes -->    
+
+
+<!-- Classes -->
+
+    <!-- Classes Mini-RF -->
+
     <DD_Class>
         <name>Chandrayaan-1_Parameters</name>
         <version_id>1.0</version_id>
@@ -245,5 +367,36 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
+    
+    <!-- Classes M3 -->
 
+    <DD_Class>
+        <name>Spacecraft_Orientation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Spacecraft_Orientation</local_identifier>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Container class for general Chandrayaan-1 related parameters.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.roll</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.pitch</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.yaw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+<!-- End of Classes -->
 </Ingest_LDD>
