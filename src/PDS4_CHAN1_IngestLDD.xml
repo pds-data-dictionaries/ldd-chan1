@@ -186,7 +186,7 @@
 
 
 <!-- attributes (alphabetical order) M3 -->
-
+    
     <DD_Attribute>
         <name>pitch</name>
         <version_id>1.0</version_id>
@@ -258,6 +258,21 @@
     </DD_Attribute>
 
     <DD_Attribute>
+        <name>spacecraft_rotation_rate</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.spacecraft_rotation_rate</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Scalar rotation rate in degrees / second since epoch.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
         <name>spacecraft_yaw_direction</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.spacecraft_yaw_direction</local_identifier>
@@ -283,6 +298,21 @@
     </DD_Attribute>
 
     <DD_Attribute>
+        <name>x_unit</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.x_unit</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The x component of a unit Cartesian vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-1</minimum_value>
+            <maximum_value>1</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
         <name>yaw</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.yaw</local_identifier>
@@ -297,6 +327,36 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
+    <DD_Attribute>
+        <name>y_unit</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.y_unit</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The y component of a unit Cartesian vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-1</minimum_value>
+            <maximum_value>1</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>z_unit</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.z_unit</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The z component of a unit Cartesian vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-1</minimum_value>
+            <maximum_value>1</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
 <!-- End of Attributes -->    
 
 
@@ -306,7 +366,7 @@
 
     <DD_Class>
         <name>Chandrayaan-1_Parameters</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>chan1.Chandrayaan_Parameters</local_identifier>
         <submitter_name>Susan Slavney</submitter_name>
         <definition>Container class for general Chandrayaan-1 related parameters.</definition>
@@ -366,16 +426,40 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Initial_Spacecraft_Orientation</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Spacecraft_Orientation</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Spacecraft_Orientation_Rates</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Spacecraft_Orientation_Axis_Vector</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
     
     <!-- Classes M3 -->
 
     <DD_Class>
-        <name>Spacecraft_Orientation</name>
+        <name>Initial_Spacecraft_Orientation</name>
         <version_id>1.0</version_id>
-        <local_identifier>chan1.Spacecraft_Orientation</local_identifier>
+        <local_identifier>chan1.Initial_Spacecraft_Orientation</local_identifier>
         <submitter_name>Trent Hare</submitter_name>
-        <definition>Container class for general Chandrayaan-1 related parameters.</definition>
+        <definition>Class for the initial Chandrayaan-1 spacecraft orientation parameters, roll/pitch/yaw in degrees from 'ideal nadir'</definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>true</element_flag>
         <DD_Association>
@@ -396,7 +480,142 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>     
     </DD_Class>
-    
+
+    <DD_Class>
+        <name>Spacecraft_Orientation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Spacecraft_Orientation</local_identifier>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Class for Chandrayaan-1 spacecraft orientation parameters, roll/pitch/yaw in degrees from 'ideal nadir'</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.roll</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.pitch</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.yaw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>     
+    </DD_Class>
+
+
+    <DD_Class>
+        <name>Spacecraft_Orientation_Rates</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Spacecraft_Orientation_Rates</local_identifier>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Class for Chandrayaan-1 spacecraft orientation rate parameters, roll/pitch/yaw in degrees / second since epoch</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.roll</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.pitch</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.yaw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>  
+    </DD_Class>
+
+
+    <DD_Class>
+        <name>Spacecraft_Orientation_Axis_Vector</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Spacecraft_Orientation_Axis_Vector</local_identifier>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Class for Chandrayaan-1 spacecraft orientation axis vector, 
+            x/y/z unit vector wrt J2000 describing rotation direction since epoch</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.x_unit</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.y_unit</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.z_unit</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>  
+    </DD_Class>
+
 <!-- End of Classes -->
 </Ingest_LDD>
