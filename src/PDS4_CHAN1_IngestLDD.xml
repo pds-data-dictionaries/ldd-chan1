@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
+   schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Ingest_LDD
+		xmlns="http://pds.nasa.gov/pds4/pds/v1"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation=" http://pds.nasa.gov/pds4/pds/v1  http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
 
-<!-- 
-    02/07/2020 GEO/EAG Initial version of the Chandrayaan mission dictionary for PDS3 to PDS4 migration
-
--->
-
-<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
     <name>Chandrayaan-1 Mission Dictionary</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <ldd_version_id>1.1.0.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Susan Slavney</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>chan1</namespace_id>
     <comment>
-      The Chandrayaan-1 mission dictionary contains a class with attributes specific to the 
-      Chandrayaan-1 mission and instruments. This dictionary was created for the migration
-      of Chandrayaan data products from PDS3 to PDS4.
+        The Chandrayaan-1 mission dictionary contains a class with attributes specific to the 
+        Chandrayaan-1 mission and instruments. This dictionary was created for the migration
+        of Chandrayaan data products from PDS3 to PDS4.
         
-      v1.1.0.0, T.Hare
-      - Initial updates for M3 
+        v1.0.0.0 GEO/EAG 
+        - Initial version of the Chandrayaan mission dictionary for PDS3 to PDS4 migration
+        
+        v1.1.0.0, T.Hare
+        - Initial updates for M3 
         
     </comment>
-    <last_modification_date_time>2020-02-07</last_modification_date_time>
+	<last_modification_date_time>2020-11-04T15:00:00Z</last_modification_date_time>
 
-<!-- attributes (alphabetical order) Mini-RF
+<!-- Begin attributes (alphabetical order) Mini-RF
         <chan1:instrument_mode_id>BASELINE_S_STEEP2</chan1:instrument_mode_id>
         <chan1:instrument_mode_desc>SAR</chan1:instrument_mode_desc>
         <chan1:mission_phase_name>Nominal Mission</chan1:<mission_phase_name>
@@ -36,7 +35,7 @@
         <chan1:producer_full_name>MINI-RF POC TEAM</chan1:producer_full_name>
         <chan1:producer_institution_name>JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY</chan1:producer_institution_name>
         <chan1:release_id>0001</chan1:release_id>
- -->
+-->
     <DD_Attribute>
         <name>instrument_mode_id</name>
         <version_id>1.0</version_id>
