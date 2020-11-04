@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch"
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- 
@@ -10,9 +10,10 @@
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
+ xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
     <name>Chandrayaan-1 Mission Dictionary</name>
     <ldd_version_id>1.0.0.0</ldd_version_id>
+    <dictionary_type>Mission</dictionary_type>
     <full_name>Susan Slavney</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>chan1</namespace_id>
@@ -184,7 +185,6 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-
 <!-- attributes (alphabetical order) M3 -->
     
     <DD_Attribute>
@@ -201,7 +201,22 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute>
+        <name>pitch_rate</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.pitch_rate</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Rate of rotation about the Y-axis in deg/sec.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+            <specified_unit_id>deg/s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute>
         <name>orbit_limb_direction</name>
         <version_id>1.0</version_id>
@@ -258,17 +273,32 @@
     </DD_Attribute>
 
     <DD_Attribute>
+        <name>roll_rate</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.roll_rate</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Rate of rotation about the X-axis in deg/sec.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+            <specified_unit_id>deg/s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
         <name>spacecraft_rotation_rate</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.spacecraft_rotation_rate</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
-        <definition>Scalar rotation rate in degrees / second since epoch.</definition>
+        <definition>Scalar rotation rate in degrees/second since epoch.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+            <specified_unit_id>deg/s</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -326,7 +356,22 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute>
+        <name>yaw_rate</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.yaw_rate</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Rate of rotation about the Z-axis in deg/sec.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+            <specified_unit_id>deg/s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute>
         <name>y_unit</name>
         <version_id>1.0</version_id>
@@ -362,7 +407,7 @@
 
 <!-- Classes -->
 
-    <!-- Classes Mini-RF -->
+    <!-- Classes built for Mini-RF and M3 -->
 
     <DD_Class>
         <name>Chandrayaan-1_Parameters</name>
@@ -534,29 +579,28 @@
         </DD_Association>     
     </DD_Class>
 
-
     <DD_Class>
         <name>Spacecraft_Orientation_Rates</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.Spacecraft_Orientation_Rates</local_identifier>
         <submitter_name>Trent Hare</submitter_name>
-        <definition>Class for Chandrayaan-1 spacecraft orientation rate parameters, roll/pitch/yaw in degrees / second since epoch</definition>
+        <definition>Class for Chandrayaan-1 spacecraft orientation rate parameters, roll/pitch/yaw in degrees/second since epoch</definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>true</element_flag>
         <DD_Association>
-            <identifier_reference>chan1.roll</identifier_reference>
+            <identifier_reference>chan1.roll_rate</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>chan1.pitch</identifier_reference>
+            <identifier_reference>chan1.pitch_rate</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>chan1.yaw</identifier_reference>
+            <identifier_reference>chan1.yaw_rate</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
