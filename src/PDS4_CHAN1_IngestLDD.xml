@@ -22,7 +22,7 @@
         - Initial version of the Chandrayaan mission dictionary for PDS3 to PDS4 migration
         
         v1.1.0.0, T.Hare
-        - Initial updates for M3 
+        - Initial updates for M3
         
     </comment>
 	<last_modification_date_time>2020-11-04T15:00:00Z</last_modification_date_time>
@@ -190,11 +190,11 @@
         <name>pitch</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.pitch</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>Rotation about the Y-axis.</definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
+            <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
             <specified_unit_id>deg</specified_unit_id>
@@ -205,7 +205,7 @@
         <name>pitch_rate</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.pitch_rate</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>Rate of rotation about the Y-axis in deg/sec.</definition>
         <DD_Value_Domain>
@@ -260,7 +260,7 @@
         <name>roll</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.roll</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>Rotation about the X-axis.</definition>
         <DD_Value_Domain>
@@ -275,7 +275,7 @@
         <name>roll_rate</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.roll_rate</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>Rate of rotation about the X-axis in deg/sec.</definition>
         <DD_Value_Domain>
@@ -330,7 +330,7 @@
         <name>x_unit</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.x_unit</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>The x component of a unit Cartesian vector.</definition>
         <DD_Value_Domain>
@@ -345,7 +345,7 @@
         <name>yaw</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.yaw</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>Rotation about the Z-axis.</definition>
         <DD_Value_Domain>
@@ -360,7 +360,7 @@
         <name>yaw_rate</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.yaw_rate</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>Rate of rotation about the Z-axis in deg/sec.</definition>
         <DD_Value_Domain>
@@ -375,7 +375,7 @@
         <name>y_unit</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.y_unit</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>The y component of a unit Cartesian vector.</definition>
         <DD_Value_Domain>
@@ -390,7 +390,7 @@
         <name>z_unit</name>
         <version_id>1.0</version_id>
         <local_identifier>chan1.z_unit</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Trent Hare</submitter_name>
         <definition>The z component of a unit Cartesian vector.</definition>
         <DD_Value_Domain>
@@ -471,6 +471,30 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
+            <identifier_reference>chan1.spacecraft_yaw_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association> 
+        <DD_Association>
+            <identifier_reference>chan1.orbit_limb_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association> 
+        <DD_Association>
+            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association> 
+        <DD_Association>
             <identifier_reference>chan1.Initial_Spacecraft_Orientation</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -524,18 +548,6 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>     
     </DD_Class>
 
     <DD_Class>
@@ -564,18 +576,6 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>     
     </DD_Class>
 
     <DD_Class>
@@ -604,18 +604,6 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>  
     </DD_Class>
 
 
@@ -646,18 +634,6 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.orientation_epoch_time</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>chan1.spacecraft_rotation_rate</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>  
     </DD_Class>
 
 <!-- End of Classes -->
