@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example / test for chan1 mission dictionary. 'Stub' PDS4 label containing only 
+Chandrayaan-1 Parameters element and children.
+
+This is an example of a label that uses attitude model 3. 
+
+source PDS3 label (not including file areas), from
+https://pdsimage2.wr.usgs.gov/Missions/Chandrayaan_1/M3/CH1M3_0003/DATA/20090415_20090816/200908/L1B/M3G20090815T115352_V03_L1B.LBL :
+
+PDS_VERSION_ID                 = PDS3                                         
+LABEL_REVISION_NOTE            = "2009-01-26, S. Lundeen,                     
+                                  2010-12-07, S. Lundeen,                     
+                                  2011-09-13, S. Lundeen"                     
+DATA_SET_ID                    = "CH1-ORB-L-M3-4-L1B-RADIANCE-V3.0"           
+PRODUCT_ID                     = "M3G20090814T020525_V03_RDN"                 
+RECORD_TYPE                    = UNDEFINED                                    
+                                                                              
+MISSION_ID                     = "CH1"                                        
+MISSION_NAME                   = "CHANDRAYAAN-1"                              
+INSTRUMENT_HOST_ID             = "CH1-ORB"                                    
+INSTRUMENT_HOST_NAME           = "CHANDRAYAAN-1 ORBITER"                      
+INSTRUMENT_NAME                = "MOON MINERALOGY MAPPER"                     
+INSTRUMENT_ID                  = M3                                           
+TARGET_NAME                    = "MOON"                                       
+TARGET_TYPE                    = "SATELLITE"                                  
+MISSION_PHASE_NAME             = "PRIMARY MISSION"                            
+PRODUCT_TYPE                   = CALIBRATED_IMAGE                             
+PRODUCT_CREATION_TIME          = 2011-09-01T02:15:01                          
+START_TIME                     = 2009-08-14T02:05:25                          
+STOP_TIME                      = 2009-08-14T02:15:20                          
+SPACECRAFT_CLOCK_START_COUNT   = "15/180505.694"                              
+SPACECRAFT_CLOCK_STOP_COUNT    = "15/181100.68"                               
+ORBIT_NUMBER                   =  03309                                       
+PRODUCT_VERSION_TYPE           = "ACTUAL"                                     
+PRODUCT_VERSION_ID             = "3.0"                                        
+SOURCE_PRODUCT_ID              = "M3G20090814T020525_V01_L0.IMG"              
+PRODUCER_INSTITUTION_NAME      = "JET PROPULSION LABORATORY"                  
+SOFTWARE_NAME                  = "m3g_l1b_v04.exe"                            
+SOFTWARE_VERSION_ID            = "04"                                         
+DESCRIPTION                    = "M3 Level 1B data product which contains     
+pixel located, radiometrically-calibrated data."                              
+                                                                              
+/* Calibrated Image Instrument and Observation Parameters */                  
+                                                                              
+SOLAR_DISTANCE                 = 1.012809051472 <AU>                          
+INSTRUMENT_MODE_ID             = "GLOBAL"                                     
+DETECTOR_TEMPERATURE           = 145.63                                       
+CH1:SWATH_WIDTH                = 304 <pixel>                                  
+CH1:SWATH_LENGTH               = 5848 <pixel>                                 
+CH1:SPACECRAFT_YAW_DIRECTION   = "FORWARD"                                    
+CH1:ORBIT_LIMB_DIRECTION       = "ASCENDING"                                  
+SPACECRAFT_ORIENTATION         = ("N/A","N/A",                                
+                                  "N/A")                                      
+CH1:INITIAL_SC_ORIENTATION     = (00.757426888667,-5.182617481444,            
+                                  -004.331057395159)                          
+CH1:SC_ORIENTATION_EPOCH_TDB_TIME = 303484469.683000                          
+CH1:SC_ORIENTATION_RATE        = ("N/A","N/A",                                
+                                  "N/A")                                      
+CH1:SC_ROTATION_AXIS_VECTOR    = (0.068778944062,-0.997560529600,             
+                                  0.011935101072)                             
+CH1:SC_ROTATION_RATE           = 0.047635137471                               
+                                                                              
+^DESCRIPTION              = "L1B_NAV_DESC.ASC"                                
+                                                                              
+/* Spectral calibration parameters and radiometric gain factor data */        
+                                                                              
+CH1:SPECTRAL_CALIBRATION_FILE_NAME      = "M3G20081211_RDN_SPC.TAB"           
+CH1:RAD_GAIN_FACTOR_FILE_NAME           = "M3G20081211_RDN_GAIN.TAB"          
+CH1:GLOBAL_BANDPASS_FILE_NAME           = "M3G20081211_RDN_BPF.IMG"     
+-->
+
+<chan1:Chandrayaan-1_Parameters>
+ <chan1:release_id>0003</chan1:release_id>
+ <chan1:mission_phase_name>Primary Mission</chan1:mission_phase_name>
+ <chan1:orbit_number>3309</chan1:orbit_number>
+ <chan1:spacecraft_clock_start_count>15/180505.694</chan1:spacecraft_clock_start_count>
+ <chan1:spacecraft_clock_stop_count>15/181100.68</chan1:spacecraft_clock_stop_count>
+ <chan1:instrument_mode_id>Global</chan1:instrument_mode_id>
+ <chan1:producer_full_name>M3 Team</chan1:producer_full_name>
+ <chan1:producer_institution_name>Jet Propulsion Laboratory</chan1:producer_institution_name>
+ <chan1:spacecraft_yaw_direction>Forward</chan1:spacecraft_yaw_direction>
+ <chan1:orbit_limb_direction>Ascending</chan1:orbit_limb_direction>
+ <chan1:orientation_epoch_time unit="s">303484469.683</chan1:orientation_epoch_time>
+ <chan1:spacecraft_rotation_rate unit="deg/s">0.047635137471</chan1:spacecraft_rotation_rate>
+ <chan1:Initial_Spacecraft_Orientation>
+  <chan1:roll unit="deg">0.757426888667</chan1:roll>
+  <chan1:pitch unit="deg">-5.182617481444</chan1:pitch>
+  <chan1:yaw unit="deg">-4.331057395159</chan1:yaw>
+ </chan1:Initial_Spacecraft_Orientation>
+ <chan1:Spacecraft_Orientation_Axis_Vector>
+  <chan1:x_unit>0.068778944062</chan1:x_unit>
+  <chan1:y_unit>-0.9975605296</chan1:y_unit>
+  <chan1:z_unit>0.011935101072</chan1:z_unit>
+ </chan1:Spacecraft_Orientation_Axis_Vector>
+</chan1:Chandrayaan-1_Parameters>

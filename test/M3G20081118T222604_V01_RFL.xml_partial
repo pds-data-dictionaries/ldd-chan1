@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example / test for chan1 mission dictionary. 'Stub' PDS4 label containing only 
+Chandrayaan-1 Parameters element and children.
+
+This is an example of a label that uses attitude model 1. 
+
+source PDS3 label (not including file areas), from
+https://pdsimage2.wr.usgs.gov/Missions/Chandrayaan_1/M3/CH1M3_0004/DATA/20081118_20090214/200811/L2/M3G20081118T222604_V01_L2.LBL :
+
+PDS_VERSION_ID                 = PDS3
+LABEL_REVISION_NOTE            = "2011-03-31  UMD/ACT  Original RLFL product."
+DATA_SET_ID                    = "CH1-ORB-L-M3-4-L2-REFLECTANCE-V1.0"
+PRODUCT_ID                     = "M3G20081118T222604_V01_RFL"
+RECORD_TYPE                    = UNDEFINED
+MISSION_ID                     = "CH1"
+MISSION_NAME                   = "CHANDRAYAAN-1"
+INSTRUMENT_HOST_ID             = "CH1-ORB"
+INSTRUMENT_HOST_NAME           = "CHANDRAYAAN-1 ORBITER"
+INSTRUMENT_NAME                = "MOON MINERALOGY MAPPER"
+INSTRUMENT_ID                  = M3
+TARGET_NAME                    = "MOON"
+TARGET_TYPE                    = "SATELLITE"
+MISSION_PHASE_NAME             = "PRIMARY MISSION"
+PRODUCT_TYPE                   = REFLECTANCE_IMAGE
+PRODUCT_CREATION_TIME          = 2011-11-19T12:02:51.131
+START_TIME                     = 2008-11-18T22:26:04
+STOP_TIME                      = 2008-11-18T22:28:04
+SPACECRAFT_CLOCK_START_COUNT   = "2/599338.975"
+SPACECRAFT_CLOCK_STOP_COUNT    = "2/599459.153"
+ORBIT_NUMBER                   = 00141
+PRODUCT_VERSION_TYPE           = "ACTUAL"
+PRODUCER_INSTITUTION_NAME      = "APPLIED COHERENT TECHNOLOGY CORP."
+SOFTWARE_NAME                  = "PIPE_REACT_m3v01_"
+SOFTWARE_VERSION_ID            = "01"
+DESCRIPTION                    = "M3 Level 2 data product which contains
+  pixel located, thermal corrected, photometry corrected, reflectance data."
+/* Calibrated Image Instrument and Observation Parameters */
+SOLAR_DISTANCE                 = 0.988788923392 <AU>
+INSTRUMENT_MODE_ID             = "GLOBAL"
+DETECTOR_TEMPERATURE           = 174.05
+CH1:SWATH_WIDTH                = 304 <pixel>
+CH1:SWATH_LENGTH               = 1182 <pixel>
+CH1:SPACECRAFT_YAW_DIRECTION   = "FORWARD"
+CH1:ORBIT_LIMB_DIRECTION       = "ASCENDING"
+SPACECRAFT_ORIENTATION         = (0.770443460000,-0.229314980000,
+                                  0.000000000000)
+CH1:INITIAL_SC_ORIENTATION     = ("N/A","N/A",
+                                  "N/A")
+CH1:SC_ORIENTATION_EPOCH_TDB_TIME = "N/A"
+CH1:SC_ORIENTATION_RATE        = ("N/A","N/A",
+                                  "N/A")
+CH1:SC_ROTATION_AXIS_VECTOR    = ("N/A","N/A",
+                                  "N/A")
+CH1:SC_ROTATION_RATE           = "N/A"
+ 
+^DESCRIPTION              = "L1B_NAV_DESC.ASC"
+ 
+/* Spectral calibration parameters and radiometric gain factor data */
+ 
+CH1:SPECTRAL_CALIBRATION_FILE_NAME      = "M3G20081211_RDN_SPC.TAB"
+CH1:RAD_GAIN_FACTOR_FILE_NAME           = "M3G20081211_RDN_GAIN.TAB"
+CH1:GLOBAL_BANDPASS_FILE_NAME           = "M3G20081211_RDN_BPF.IMG"
+ 
+/* Level 1B radiance image product and the associated observational  */       
+/* geometry and pixel location (longitude, latitude, and radius)     */
+/* files used as sources for this reflectance product.               */    
+ 
+SOURCE_DATA_SET_ID                      = "CH1-ORB-L-M3-4-L1B-RADIANCE-V3.0"
+SOURCE_PRODUCT_ID                       = "M3G20081118T222604_V03_RDN"
+CH1:RADIANCE_IMAGE_FILE_NAME            = "M3G20081118T222604_V03_RDN.IMG"
+CH1:OBS_GEOMETRY_FILE_NAME              = "M3G20081118T222604_V03_OBS.IMG"
+CH1:PIXEL_LOCATION_FILE_NAME            = "M3G20081118T222604_V03_LOC.IMG"
+/* Calibration files and factors applied to the Level 1B radiance   */        
+/* image product to generate this reflectance product.              */        
+CH1:SOLAR_SPECTRUM_FILE_NAME            = "M3G20110224_RFL_SOLAR_SPEC.TAB"
+CH1:STATISTICAL_POLISHER_FILE_NAME      = "M3G20110830_RFL_STAT_POL_2.TAB"
+CH1:THERMAL_CORRECTION_FLAG             = "Y"
+CH1:PHOTOMETRY_CORR_FILE_NAME           = "M3G20111109_RFL_F_ALPHA_HIL.TAB"
+CH1:GROUND_TRUTH_CORR_FILE_NAME         = "N/A"
+
+/* Description of the supplemental data file for the RLF image above.       */
+/* Band 1 provides the 1489-nm channel photometrically-corrected to a       */
+/* sphere to preserve topography (i.e., photometrically-corrected albedo);  */
+/* a stored value of 1.0, unitless, represents 100% reflectance.            */
+/* Band 2 contains the temperature estimated and applied by the thermal     */
+/* correction step of the L2 calibration process; units are kelvin.         */
+/* Band 3 contains the longest wavelength band that is scientifically       */
+/* useful and has topography (number 84 for global mode or 253 for target   */
+/* mode) from the L1 radiance image specified by CH1:RADIANCE_IMAGE_FILE_   */
+/* NAME; none of the Level 2 steps has been applied.                       */
+OBJECT          = SUPPLEMENTAL_FILE
+  ^SUPPL_IMAGE  = "M3G20081118T222604_V01_SUP.IMG"
+  RECORD_TYPE   = FIXED_LENGTH
+  RECORD_BYTES  = 3648
+  FILE_RECORDS  = 1182
+  OBJECT                     = SUPPL_IMAGE
+    LINES                    = 1182
+    LINE_SAMPLES             = 304
+    SAMPLE_TYPE              = PC_REAL
+    SAMPLE_BITS              = 32
+    BANDS                    = 3
+    BAND_STORAGE_TYPE        = LINE_INTERLEAVED
+    BAND_NAME                = ("1489NM RFL (PHOTOM RELATIVE TO SPHERE)",
+                                "ESTIMATED TEMPERATURE",                      
+                                "RDN BAND 84") 
+    LINE_DISPLAY_DIRECTION   = DOWN
+    SAMPLE_DISPLAY_DIRECTION = RIGHT
+END_OBJECT                 = SUPPL_IMAGE
+END_OBJECT = SUPPLEMENTAL_FILE
+/* Description of the header file for SUPPLEMENTAL_FILE                     */
+OBJECT               = SUPPLEMENTAL_HDR_FILE
+  ^SUPPL_ENVI_HEADER = "M3G20081118T222604_V01_SUP.HDR"
+  RECORD_TYPE        = VARIABLE_LENGTH
+  FILE_RECORDS       = 14
+  OBJECT               = SUPPL_ENVI_HEADER
+    INTERCHANGE_FORMAT = "ASCII"
+    BYTES              = 291
+    HEADER_TYPE        = ENVI
+    DESCRIPTION        = "Header file for compatibility with the commercial
+                          software package ENVI."   
+  END_OBJECT = SUPPL_ENVI_HEADER
+END_OBJECT = SUPPLEMENTAL_HDR_FILE
+END -->
+
+
+<Mission_Area>
+   <chan1:Chandrayaan-1_Parameters>
+    <chan1:release_id>0001</chan1:release_id>
+    <chan1:mission_phase_name>Primary Mission</chan1:mission_phase_name>
+    <chan1:orbit_number>141</chan1:orbit_number>
+    <chan1:spacecraft_clock_start_count>2/599338.975</chan1:spacecraft_clock_start_count>
+    <chan1:spacecraft_clock_stop_count>2/599459.153</chan1:spacecraft_clock_stop_count>
+    <chan1:instrument_mode_id>Global</chan1:instrument_mode_id>
+    <chan1:producer_institution_name>Applied Coherent Technology Corp.</chan1:producer_institution_name>
+    <chan1:spacecraft_yaw_direction>Forward</chan1:spacecraft_yaw_direction>
+    <chan1:orbit_limb_direction>Ascending</chan1:orbit_limb_direction>
+    <chan1:Spacecraft_Orientation>
+     <chan1:roll unit="deg">0.77044346</chan1:roll>
+     <chan1:pitch unit="deg">-0.22931498</chan1:pitch>
+     <chan1:yaw unit="deg">0.0</chan1:yaw>
+    </chan1:Spacecraft_Orientation>
+   </chan1:Chandrayaan-1_Parameters>
+  </Mission_Area>
