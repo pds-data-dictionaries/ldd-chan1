@@ -8,7 +8,7 @@ Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
 Only one LDD source version is kept such that it can be managed by github.
 
-- [1.D.0.0](src)
+- [src](src)
 
 ## Versions
 
