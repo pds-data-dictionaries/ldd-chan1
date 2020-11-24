@@ -8,7 +8,7 @@
 		xsi:schemaLocation=" http://pds.nasa.gov/pds4/pds/v1  http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
 
     <name>Chandrayaan-1 Mission Dictionary</name>
-    <ldd_version_id>1.1.0.0</ldd_version_id>
+    <ldd_version_id>1.1.1.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Susan Slavney</full_name>
     <steward_id>geo</steward_id>
@@ -81,8 +81,24 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
                 <value>Primary Mission</value>
-                <value_meaning>Primary Mission</value_meaning>
+                <value_meaning>
+                This value was used by the M3 data providers for all of their archived 
+                observational data. Presumably, data from a hypothetical Chandrayaan-1 
+                extended mission, beyond its nominal design life of 2 years, might have 
+                been distinguished by other values of this attribute. As it did not survive 
+                to the end of this period, other values proved unnecessary.
+                </value_meaning>
             </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Nominal Mission</value>
+                <value_meaning>
+                This value was used by the mini-RF data providers for all of their archived
+                observational data. Presumably, data from a hypothetical Chandrayaan-1 
+                extended mission, beyond its nominal design life of 2 years, might have been 
+                distinguished by other values of this attribute. As it did not survive to the 
+                end of this period, other values proved unnecessary.
+                </value_meaning>
+          </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -164,7 +180,7 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <pattern>([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,3})?</pattern>
+            <pattern>([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>  
     
@@ -180,7 +196,7 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <pattern>([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,3})?</pattern>
+            <pattern>([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
 
