@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        0.0.0
-   LDD Version Id:        1.1.0.0
+   LDDTool Version        12.0.0
+   LDD Version Id:        1.1.1.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Sun Nov 15 00:01:15 UTC 2020
-   Common Schema          [PDS4_PDS_1E00.xsd]
-   Common Schematron      [PDS4_PDS_1E00.sch]
-   IM Version Id:         1.14.0.0
+   Time                   Wed Nov 25 20:16:46 UTC 2020
+   Common Schema          [PDS4_PDS_1F00.xsd]
+   Common Schematron      [PDS4_PDS_1F00.sch]
+   IM Version Id:         1.15.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.0
+   IM Label Version Id:   1.21
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -40,7 +40,7 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               Chandrayaan-1 Mission Dictionary
-   LDD Version            1.1.0.0
+   LDD Version            1.1.1.0
    Full Name              Susan Slavney
    Steward                geo
    Namespace Id           chan1
@@ -54,110 +54,114 @@ Parsed Input - Header:
         
         v1.1.0.0, T.Hare
         - Initial updates for M3
+
+        v1.1.1.0, M. St. Clair
+        - Further updates for M3
+        - Pull release for 1.E.0.0
         
     
-   Last Modification Time 2020-11-04T15:00:00Z
+   Last Modification Time 2020-11-22T15:00:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
 
    name                   instrument_mode_id
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description             The instrument_mode_id element provides an instrument-dependent designation of operating mode. This may be simply a number, letter, code, or a word. 
 
    name                   instrument_mode_desc
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description            The instrument_mode_desc element describes the instrument mode that is identified by the instrument_mode_id element.
 
    name                   mission_phase_name
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description             The mission_phase_name element provides the commonly-used identifier of a mission phase. 
 
    name                   orbit_number
-   version                1.14
+   version                1.15
    value data type        ASCII_NonNegative_Integer
    description             The orbit_number element identifies the number of the orbital revolution of the spacecraft around a target body. 
 
    name                   producer_full_name
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description             The producer_full_name element provides the full_name of the individual mainly responsible for the production of a data set. 
 
    name                   producer_institution_name
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description             The producer_institution_name element identifies a university, research center, NASA center or other institution associated with the production of a data set. This would generally be an institution associated with the element producer_full_name. 
 
    name                   release_id
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description            Release_id is the identifier of a scheduled release of data by PDS. The first data release is Release 0001. The release_id for a given product is always the first release in which it appears, and does not change if the product is revised later.
 
    name                   spacecraft_clock_start_count
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
 
    name                   spacecraft_clock_stop_count
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the end of a time period of interest. 
 
    name                   pitch
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Rotation about the Y-axis.
    nillable               true
    unit of measure type   Units_of_Angle
 
    name                   pitch_rate
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Rate of rotation about the Y-axis in deg/sec.
    nillable               true
    unit of measure type   Units_of_Angular_Velocity
 
    name                   orbit_limb_direction
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description             The orbit_limb attribute provides the direction of the spacecraft orbit with respect to the lunar limb. valids: "Ascending", "Descending" 
 
    name                   orientation_epoch_time
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            orientation_epoch_time indicates time for the recorded orentiation. 
    unit of measure type   Units_of_Time
 
    name                   roll
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Rotation about the X-axis.
    nillable               true
    unit of measure type   Units_of_Angle
 
    name                   roll_rate
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Rate of rotation about the X-axis in deg/sec.
    nillable               true
    unit of measure type   Units_of_Angular_Velocity
 
    name                   spacecraft_rotation_rate
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Scalar rotation rate in degrees/second since epoch.
    unit of measure type   Units_of_Angular_Velocity
 
    name                   spacecraft_yaw_direction
-   version                1.14
+   version                1.15
    value data type        ASCII_Short_String_Collapsed
    description             The spacecraft_yaw_direction attribute provides the spacecraft yaw (look) mode. valids: "Forward", "Reverse" 
 
    name                   x_unit
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            The x component of a unit Cartesian vector.
    nillable               true
@@ -165,21 +169,21 @@ Parsed Input - Attributes:
    maximum value          1
 
    name                   yaw
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Rotation about the Z-axis.
    nillable               true
    unit of measure type   Units_of_Angle
 
    name                   yaw_rate
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            Rate of rotation about the Z-axis in deg/sec.
    nillable               true
    unit of measure type   Units_of_Angular_Velocity
 
    name                   y_unit
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            The y component of a unit Cartesian vector.
    nillable               true
@@ -187,7 +191,7 @@ Parsed Input - Attributes:
    maximum value          1
 
    name                   z_unit
-   version                1.14
+   version                1.15
    value data type        ASCII_Real
    description            The z component of a unit Cartesian vector.
    nillable               true

@@ -2,13 +2,13 @@
 
 The Chandrayaan-1 mission dictionary contains a class with attributes specific to the 
         Chandrayaan-1 mission and instruments. This dictionary was created for the migration
-        of Chandrayaan data products from PDS3 to PDS4.
+        of Chandrayaan data products from PDS3 to PDS4. Currently this includes Mini-RF and M3.
 
 Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
 Only one LDD source version is kept such that it can be managed by github.
 
-- [1.D.0.0](src)
+- [src](src)
 
 ## Versions
 
@@ -19,6 +19,8 @@ The build process insures compatiblity of the LDD with the core information mode
 
 This LDD has been released for the following versions of the PDS4 information model:
 
+- [development](build/development)
+- [PDS4 IM v1.E.0.0 (CHAN1 LDD v1.1.1.0)](build/release/1.E.0.0_1.1.1.0)
 - [PDS4 IM v1.D.0.0 (CHAN1 LDD v1.0.0.0)](build/release/1.D.0.0_1.0.0.0)
 
 ## Notes

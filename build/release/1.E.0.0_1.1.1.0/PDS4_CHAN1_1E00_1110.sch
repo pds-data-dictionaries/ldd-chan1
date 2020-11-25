@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:chan1  Version:1.1.0.0 - Sun Nov 15 00:01:15 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:chan1  Version:1.1.1.0 - Wed Nov 25 19:46:18 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -20,8 +20,8 @@
 		   <!-- ================================================ -->
   <sch:pattern>
     <sch:rule context="chan1:Chandrayaan-1_Parameters/chan1:mission_phase_name">
-      <sch:assert test=". = ('Nominal Mission')">
-        The attribute chan1:mission_phase_name must be equal to the value 'Nominal Mission'.</sch:assert>
+      <sch:assert test=". = ('Nominal Mission', 'Primary Mission')">
+        The attribute chan1:mission_phase_name must be equal to one of the following values 'Nominal Mission', 'Primary Mission'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

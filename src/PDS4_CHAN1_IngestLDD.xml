@@ -26,9 +26,10 @@
 
         v1.1.1.0, M. St. Clair
         - Further updates for M3
+        - Pull release for 1.E.0.0
         
     </comment>
-	<last_modification_date_time>2020-11-04T15:00:00Z</last_modification_date_time>
+	<last_modification_date_time>2020-11-22T15:00:00Z</last_modification_date_time>
 
 <!-- Begin attributes (alphabetical order) Mini-RF
         <chan1:instrument_mode_id>BASELINE_S_STEEP2</chan1:instrument_mode_id>
@@ -72,7 +73,7 @@
     
     <DD_Attribute>
         <name>mission_phase_name</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>chan1.mission_phase_name</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>

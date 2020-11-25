@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Sun Nov 15 00:01:15 UTC 2020" ,
+      "Date": "Wed Nov 25 20:16:53 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -623,7 +623,13 @@
           , "PermissibleValueList": [
               {"PermissibleValue": {
                   "value": "Nominal Mission" ,
-                  "valueMeaning": "Nominal Mission" ,
+                  "valueMeaning": " This value was used by the mini-RF data providers for all of their archived observational data. Presumably, data from a hypothetical Chandrayaan-1 extended mission, beyond its nominal design life of 2 years, might have been distinguished by other values of this attribute. As it did not survive to the end of this period, other values proved unnecessary. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Primary Mission" ,
+                  "valueMeaning": " This value was used by the M3 data providers for all of their archived observational data. Presumably, data from a hypothetical Chandrayaan-1 extended mission, beyond its nominal design life of 2 years, might have been distinguished by other values of this attribute. As it did not survive to the end of this period, other values proved unnecessary. " ,
                   "isDeprecated": "false"
                 }
              }
@@ -812,7 +818,7 @@
             "maximumCharacters": "255" ,
             "minimumValue": "Unbounded" ,
             "maximumValue": "Unbounded" ,
-            "pattern": "([0-9]{1,2}\/)?[0-9]{1,10}(:[0-9]{5})?" ,
+            "pattern": "([0-9]{1,2}\\\/)[0-9]{1,10}(\\.[0-9]{1,5})?" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
@@ -837,7 +843,7 @@
             "maximumCharacters": "255" ,
             "minimumValue": "Unbounded" ,
             "maximumValue": "Unbounded" ,
-            "pattern": "([0-9]{1,2}\/)?[0-9]{1,10}(:[0-9]{5})?" ,
+            "pattern": "([0-9]{1,2}\\\/)[0-9]{1,10}(\\.[0-9]{1,5})?" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,

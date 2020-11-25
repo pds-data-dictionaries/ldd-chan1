@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:chan1  Version:1.1.0.0 - Sun Nov 15 00:01:15 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:chan1  Version:1.1.1.0 - Wed Nov 25 19:46:18 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.1.0.0 - chan1: - Chandrayaan-1 Mission Dictionary                       -->
+  <!-- 1.1.1.0 - chan1: - Chandrayaan-1 Mission Dictionary                       -->
   <!--   file:/home/runner/work/ldd-chan1/ldd-chan1/src/PDS4_CHAN1_IngestLDD.xml -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,7 +14,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.1.0.0">
+    version="1.1.1.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
@@ -30,6 +30,9 @@
         
         v1.1.0.0, T.Hare
         - Initial updates for M3
+
+        v1.1.1.0, M. St. Clair
+        - Further updates for M3
         
     
     </xs:documentation>
@@ -66,7 +69,7 @@
       <xs:element ref="chan1:Spacecraft_Orientation_Axis_Vector" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="chan1:mission_phase_name = ('Nominal Mission')"/> -->
+    <!-- <xs:assert test="chan1:mission_phase_name = ('Nominal Mission', 'Primary Mission')"/> -->
     <!-- <xs:assert test="chan1:spacecraft_yaw_direction = ('Forward', 'Reverse')"/> -->
     <!-- <xs:assert test="chan1:orbit_limb_direction = ('Ascending', 'Descending')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
@@ -342,7 +345,7 @@
         time period of interest. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?'/>
+    	<xs:pattern value='([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?'/>
      <xs:minLength value="1"/>
      <xs:maxLength value="255"/>
 	   </xs:restriction>
@@ -355,7 +358,7 @@
         period of interest. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?'/>
+    	<xs:pattern value='([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?'/>
      <xs:minLength value="1"/>
      <xs:maxLength value="255"/>
 	   </xs:restriction>
