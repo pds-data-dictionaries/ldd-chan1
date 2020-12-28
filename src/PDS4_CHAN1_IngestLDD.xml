@@ -27,9 +27,12 @@
         v1.1.1.0, M. St. Clair
         - Further updates for M3
         - Pull release for 1.E.0.0
+	    
+	v.1.1.1.1, M. St. Clair
+	- add 'UNK' to spacecraft clock fields
         
     </comment>
-	<last_modification_date_time>2020-11-22T15:00:00Z</last_modification_date_time>
+	<last_modification_date_time>2020-12-23T19:00:00Z</last_modification_date_time>
 
 <!-- Begin attributes (alphabetical order) Mini-RF
         <chan1:instrument_mode_id>BASELINE_S_STEEP2</chan1:instrument_mode_id>
@@ -184,7 +187,7 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <pattern>([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?</pattern>
+            <pattern>(([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?)|(UNK)</pattern>
         </DD_Value_Domain>
     </DD_Attribute>  
     
@@ -200,7 +203,7 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <pattern>([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?</pattern>
+            <pattern>(([0-9]{1,2}\/)[0-9]{1,10}(\.[0-9]{1,5})?)|(UNK)</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
 
