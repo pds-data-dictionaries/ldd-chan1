@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        12.0.0
+   LDDTool Version        13.0.2
    LDD Version Id:        1.1.1.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Nov 25 20:16:46 UTC 2020
+   Time                   Sat Jun 26 19:01:38 UTC 2021
    Common Schema          [PDS4_PDS_1F00.xsd]
    Common Schematron      [PDS4_PDS_1F00.sch]
    IM Version Id:         1.15.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.21
+   IM Label Version Id:   1.0
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -58,9 +58,12 @@ Parsed Input - Header:
         v1.1.1.0, M. St. Clair
         - Further updates for M3
         - Pull release for 1.E.0.0
+	    
+	v.1.1.1.1, M. St. Clair
+	- add 'UNK' to spacecraft clock fields
         
     
-   Last Modification Time 2020-11-22T15:00:00Z
+   Last Modification Time 2020-12-23T19:00:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
