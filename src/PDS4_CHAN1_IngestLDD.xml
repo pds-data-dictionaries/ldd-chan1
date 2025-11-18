@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.sch"
    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Ingest_LDD
 		xmlns="http://pds.nasa.gov/pds4/pds/v1"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation=" http://pds.nasa.gov/pds4/pds/v1  http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
+		xsi:schemaLocation=" http://pds.nasa.gov/pds4/pds/v1  http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.xsd">
 
     <name>Chandrayaan-1 Mission Dictionary</name>
-    <ldd_version_id>1.1.1.0</ldd_version_id>
+    <ldd_version_id>1.2.0.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
-    <full_name>Susan Slavney</full_name>
+    <full_name>Jennifer Ward</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>chan1</namespace_id>
     <comment>
@@ -28,21 +28,16 @@
         - Further updates for M3
         - Pull release for 1.E.0.0
 	    
-	v.1.1.1.1, M. St. Clair
-	- add 'UNK' to spacecraft clock fields
+	    v1.1.1.1, M. St. Clair
+	    - add 'UNK' to spacecraft clock fields
+	    
+	    v1.2.0.0, J. Ward
+	    - Added Mini-RF_Parameters class
         
     </comment>
-	<last_modification_date_time>2020-12-23T19:00:00Z</last_modification_date_time>
+	<last_modification_date_time>2025-11-14T03:30:00Z</last_modification_date_time>
 
-<!-- Begin attributes (alphabetical order) Mini-RF
-        <chan1:instrument_mode_id>BASELINE_S_STEEP2</chan1:instrument_mode_id>
-        <chan1:instrument_mode_desc>SAR</chan1:instrument_mode_desc>
-        <chan1:mission_phase_name>Nominal Mission</chan1:<mission_phase_name>
-        <chan1:orbit_number>720</chan1:orbit_number>
-        <chan1:producer_full_name>MINI-RF POC TEAM</chan1:producer_full_name>
-        <chan1:producer_institution_name>JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY</chan1:producer_institution_name>
-        <chan1:release_id>0001</chan1:release_id>
--->
+<!-- Begin attributes (alphabetical order) Chandrayaan-1_Parameters-->
     <DD_Attribute>
         <name>instrument_mode_id</name>
         <version_id>1.0</version_id>
@@ -278,7 +273,7 @@
             <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-
+    
     <DD_Attribute>
         <name>roll</name>
         <version_id>1.0</version_id>
@@ -423,7 +418,256 @@
             <maximum_value>1</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
+
+    <!-- attributes (alphabetical order) Mini-RF -->
+
+    <DD_Attribute>
+        <name>azimuth_resolution</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.azimuth_resolution</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The true resolution of the radar image in the azimuth (along track) direction, 
+            evaluated at the center of the image for the transmit, receive, and processing 
+            parameters used for the sequence.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
     
+    <DD_Attribute>
+        <name>band_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.band_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The name used to describe a type of band in a multi-band radar image. Examples include
+            "V Receive Intensity" and "Circular Polarization Ratio".
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>band_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.band_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The sequence number for a band in a multi-band radar image.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>1</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>center_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.center_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The center_frequency element provides the frequency of maximum transmittance of a 
+            filter or the frequency that corresponds to the geometric center of the 
+            passband of a filter or a channel.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coefficent_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.coefficent_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The time associated with a set of 4 polynomial coefficients used for resampling slant range 
+            (in meters) to approximate ground range (in meters) at that time. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coefficent_1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.coefficent_1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The first of a set of 4 polynomial coefficients used for resampling slant range 
+            (in meters) to approximate ground range (in meters). 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coefficent_2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.coefficent_2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The second of a set of 4 polynomial coefficients used for resampling slant range 
+            (in meters) to approximate ground range (in meters). 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coefficent_3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.coefficent_3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The third of a set of 4 polynomial coefficients used for resampling slant range 
+            (in meters) to approximate ground range (in meters). 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coefficent_4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.coefficent_4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The fourth of a set of 4 polynomial coefficients used for resampling slant range 
+            (in meters) to approximate ground range (in meters). 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>line_exposure_duration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.line_exposure_duration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The line_exposure_duration data element indicates the time elapsed during the 
+            aquisition of one radar image line of data.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>look_direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.look_direction</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The value (Right or Left) indicates the side of the spacecraft groundtrack to which the 
+            antenna is pointed for data acquired within a synthetic aperture radar (SAR) image. 
+            Most SAR instruments acquire an image on only one side of the ground track at one time. 
+            This value also indicates from which side the SAR image is illuminated. If the 
+            spacecraft images to the left of its ground track (LOOK_DIRECTION = LEFT), the image 
+            will be illuminated from the (viewer's) left side, and, conversely, if the spacecraft 
+            looks to the right, the illumination will come from the right in the image file. 
+            The direction of illumination is critical to interpretation of features in the 
+            image. Mosaicked products may contain various combinations of source imagery. 
+            For example, they may combine only left-looking observations (LOOK_DIRECTION = 'LEFT'), 
+            only right-looking observations (LOOK_DIRECTION = 'RIGHT'), or a mixture of the two 
+            (LOOK_DIRECTION = {'LEFT','RIGHT'}).
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Right</value>
+                <value_meaning>The spacecraft looks to the right, and the illumination was 
+                    from the right in the image file.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Left</value>
+                <value_meaning>The spacecraft looks to the right, and the illumination was 
+                    from the right in the image file.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>radar_incidence_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.radar_incidence_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            Radar incidence_angle is defined as the value of the angle between the local vertical 
+            and the spacecraft direction. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <maximum_value>90.0</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>range_resolution</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.range_resolution</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The true resolution of the radar image in the range (across track) direction, 
+            evaluated at the center of the image for the transmit, receive, and processing 
+            parameters used for the sequence.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
 <!-- End of Attributes -->    
 
 
@@ -541,6 +785,12 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Mini-RF_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
     
     <!-- Classes M3 -->
@@ -629,7 +879,6 @@
         </DD_Association>
     </DD_Class>
 
-
     <DD_Class>
         <name>Spacecraft_Orientation_Axis_Vector</name>
         <version_id>1.0</version_id>
@@ -658,6 +907,132 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
+       
+    <!-- Classes Mini_RF -->
 
+    <DD_Class>
+        <name>Mini-RF_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Mini-RF_Parameters</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>Class for Chandrayaan-1 parameters relating to the Mini-RF (Mini-SAR) instrument.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.center_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.look_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.radar_incidence_angle</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.azimuth_resolution</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.range_resolution</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.line_exposure_duration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Bands</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.Range_Coefficent_Set</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Bands</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Bands</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            Container class for specifying the order of bands and their name in a multi-band
+            radar image.
+        </definition>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.band_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.band_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Range_Coefficent_Set</name>
+        <version_id>1.0</version_id>
+        <local_identifier>chan1.Range_Coefficent_Set</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            Container class for defining sets of coefficents used for resampling slant range 
+            (in meters) to approximate ground range (in meters). 
+        </definition>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>chan1.coefficent_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.coefficent_1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.coefficent_2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.coefficent_3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>chan1.coefficent_4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+       
 <!-- End of Classes -->
 </Ingest_LDD>
